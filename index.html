@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
+        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>News Feed</h1>
+
+        <div class="content">
+
+            <form id="add-article-form">
+                <input type="text" name="articleTitle" placeholder="Article Title">
+                <select name="articleType" id="tagSelect">
+                    <option value="Beauty">Beauty</option>
+                    <option value="Gossiping">Gossiping</option>
+                    <option value="Joke">Joke</option>
+                    <option value="SchoolLife">SchoolLife</option>
+                </select>
+                <input type="text" name="articleContent" placeholder="Article Content">
+                <button id="addArticle">Add Article</button>
+            </form>
+
+            <form id="search-form">
+                <input type="text" id="searchFr" placeholder="Search Friend">
+                <span>選擇文章分類</span>
+                <select name="searchType" id="searchTag">
+                    <option value="Beauty">Beauty</option>
+                    <option value="Gossiping">Gossiping</option>
+                    <option value="Joke">Joke</option>
+                    <option value="SchoolLife">SchoolLife</option>
+                </select>
+                <button id="sendSearch">送出</button>
+            </form>
+
+            <ul id="content-list"></ul>         
+        </div>
+
+        <h2 class="frContent">Meet People</h2>
+        <div class="content">
+
+                <form id="add-fr-form">
+                    <input type="text" id="add-fr" placeholder="Enter a mail address...">
+                    <button id="send-invite">送出</button>
+                </form>
+
+                <ul id="friend-list"></ul>
+
+                <h4>等待接收好友名單</h4>
+                <ul id="waiting-list"></ul>
+
+        </div>
+               
+
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#config-web-app --> 
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCDK0UjVMcbW_d09c7KV_PG4TmfBoVSges",
+            authDomain: "appschoolsocial.firebaseapp.com",
+            databaseURL: "https://appschoolsocial.firebaseio.com",
+            projectId: "appschoolsocial",
+            storageBucket: "appschoolsocial.appspot.com",
+            messagingSenderId: "422932590154",
+            appId: "1:422932590154:web:ac60f2d09bfe877d"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+            // check catch the data
+            // let firestore = firebase.firestore();
+            // console.log(firestore);
+
+            const db = firebase.firestore();
+            // console.log(db);
+            // db.settings({timestampsInSnapshots: true});
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>
